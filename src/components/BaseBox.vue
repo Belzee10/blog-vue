@@ -5,6 +5,7 @@
 </template>
 
 <script>
+// TODO find a way to import commons cmps globally
 export default {
   name: 'BaseBox'
 };

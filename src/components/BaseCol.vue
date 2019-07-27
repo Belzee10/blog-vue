@@ -1,5 +1,5 @@
 <template>
-  <div class="col" :class="getColWidth"></div>
+  <BaseBox class="col" :class="getColWidth"></BaseBox>
 </template>
 
 <script>

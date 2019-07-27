@@ -1,9 +1,7 @@
 <template>
-  <footer>
-    <div class="footer">
-      Made with 💜 by Belzee10
-    </div>
-  </footer>
+  <BaseBox class="footer">
+    Made with 💜 by Belzee10
+  </BaseBox>
 </template>
 
 <script>

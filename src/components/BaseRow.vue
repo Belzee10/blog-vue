@@ -1,7 +1,7 @@
 <template>
-  <div class="row">
+  <BaseBox class="row">
     <slot></slot>
-  </div>
+  </BaseBox>
 </template>
 
 <script>

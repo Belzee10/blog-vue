@@ -1,17 +1,28 @@
 <template>
   <div id="app">
-    <TheNavbar />
-    <router-view />
-    <TheFooter />
+    <BaseLayout>
+      <template v-slot:header>
+        <TheNavbar></TheNavbar>
+      </template>
+      <BaseBox class="container">
+        main
+        <router-view />
+      </BaseBox>
+      <template v-slot:footer>
+        <TheFooter></TheFooter>
+      </template>
+    </BaseLayout>
   </div>
 </template>
 
 <script>
-import TheNavbar from './components/TheNavbar.vue';
-import TheFooter from './components/TheFooter.vue';
+import BaseLayout from '@/components/BaseLayout.vue';
+import TheNavbar from '@/components/TheNavbar.vue';
+import TheFooter from '@/components/TheFooter.vue';
 
 export default {
   components: {
+    BaseLayout,
     TheNavbar,
     TheFooter
   }
@@ -20,8 +31,6 @@ export default {
 
 <style lang="scss">
 #app {
-  display: flex;
-  flex-direction: column;
   height: 100%;
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
-  <table class="table">
+  <span>dsfsdf</span>
+  <!-- <table class="table">
     <thead>
       <tr>
         <th scope="col">
@@ -22,7 +23,7 @@
         <td>{{ post.content }}</td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
 </template>
 
 <script>
