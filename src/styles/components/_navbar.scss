@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: $color-secondary;
+
+  .navbar-collapse {
+    display: flex;
+  }
+
+  .navbar-nav {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  .navbar-brand {
+    display: inline-block;
+    margin-right: 2rem;
+    color: $color-initial;
+    font-size: 22px;
+  }
+
+  .nav-item > a {
+    display: block;
+    padding: 1rem;
+  }
+}
