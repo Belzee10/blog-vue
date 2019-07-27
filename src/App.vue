@@ -5,7 +5,6 @@
         <TheNavbar></TheNavbar>
       </template>
       <BaseBox class="container">
-        main
         <router-view />
       </BaseBox>
       <template v-slot:footer>

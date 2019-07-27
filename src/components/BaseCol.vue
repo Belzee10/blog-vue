@@ -1,5 +1,7 @@
 <template>
-  <BaseBox class="col" :class="getColWidth"></BaseBox>
+  <BaseBox class="col" :class="getColWidth">
+    <slot></slot>
+  </BaseBox>
 </template>
 
 <script>

@@ -25,7 +25,8 @@ export default {
   height: 100%;
 }
 main {
-  margin-top: 5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 footer {
   margin-top: auto;

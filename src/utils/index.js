@@ -17,4 +17,15 @@ const camelCaseComponentName = str => {
   return component.charAt(0).toLowerCase() + component.slice(1, component.lentgh);
 };
 
-export { capitalize, camelCaseComponentName };
+/**
+ * truncate a string
+ * @param {*String} str
+ * @param {Number} length
+ */
+const truncate = (str, length) => {
+  if (!str) return '';
+  const value = str.toString();
+  return `${value.slice(0, length)}...`;
+};
+
+export { capitalize, camelCaseComponentName, truncate };

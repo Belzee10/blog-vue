@@ -1,0 +1,10 @@
+.post-item {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1.5rem;
+  height: 100%;
+  .title {
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+}
