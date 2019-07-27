@@ -23,4 +23,7 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss">
+#app {
+}
+</style>
