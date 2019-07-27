@@ -18,12 +18,7 @@
 
 <script>
 export default {
-  name: 'Navbar',
-  data() {
-    return {
-      quote: 'mkjbjjmbnknkjn'
-    };
-  }
+  name: 'TheNavbar'
 };
 </script>
 

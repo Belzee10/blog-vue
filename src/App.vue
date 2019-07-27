@@ -1,21 +1,27 @@
 <template>
   <div id="app">
-    <Navbar />
+    <TheNavbar />
     <router-view />
+    <TheFooter />
   </div>
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue';
+import TheNavbar from './components/TheNavbar.vue';
+import TheFooter from './components/TheFooter.vue';
 
 export default {
   components: {
-    Navbar
+    TheNavbar,
+    TheFooter
   }
 };
 </script>
 
 <style lang="scss">
 #app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 </style>
