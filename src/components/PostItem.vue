@@ -1,6 +1,9 @@
 <template>
   <BaseBox class="post-item">
     <BaseHeader type="h5" class="title">{{ index }}. {{ title }} </BaseHeader>
+    <BaseText class="date">
+      {{ date }}
+    </BaseText>
     <BaseText tag="p" class="content"> {{ content | truncate(250) }} </BaseText>
   </BaseBox>
 </template>
@@ -22,6 +25,10 @@ export default {
       default: ''
     },
     content: {
+      type: String,
+      default: ''
+    },
+    date: {
       type: String,
       default: ''
     }

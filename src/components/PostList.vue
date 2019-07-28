@@ -21,7 +21,13 @@
     </BaseRow>
     <BaseRow>
       <BaseCol v-for="(post, index) in posts" :key="post.id" width="50" class="post-list">
-        <PostItem :id="post.id" :index="index + 1" :title="post.title" :content="post.content" />
+        <PostItem
+          :id="post.id"
+          :index="index + 1"
+          :title="post.title"
+          :content="post.content"
+          :date="post.date"
+        />
       </BaseCol>
     </BaseRow>
   </BaseBox>

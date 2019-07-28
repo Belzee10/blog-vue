@@ -1,4 +1,5 @@
 const faker = require('faker');
+const dayjs = require('dayjs');
 
 module.exports = () => {
   const data = { posts: [] };
@@ -7,7 +8,8 @@ module.exports = () => {
     const post = {
       id: faker.random.uuid(),
       title: faker.lorem.sentence(),
-      content: faker.lorem.paragraph()
+      content: faker.lorem.paragraph(),
+      date: dayjs(faker.date.past()).format('MMMM DD, YYYY')
     };
     data.posts.push(post);
   }
