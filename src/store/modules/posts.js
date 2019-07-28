@@ -1,4 +1,6 @@
-import { getPosts } from '@/api/Posts';
+import { getAllPosts, getFilterPosts } from '@/api/Posts';
+import { transformFilter } from '@/utils';
+import { SET_POSTS } from '../mutation-types';
 
 const state = {
   posts: []
@@ -10,10 +12,22 @@ const getters = {
 
 const actions = {
   fetchPosts({ commit }) {
-    return getPosts()
+    return getAllPosts()
       .then(posts => {
         commit({
-          type: 'setPosts',
+          type: SET_POSTS,
+          posts
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  },
+  filterPosts({ commit }, query) {
+    return getFilterPosts(transformFilter(query))
+      .then(posts => {
+        commit({
+          type: SET_POSTS,
           posts
         });
       })
@@ -24,7 +38,7 @@ const actions = {
 };
 
 const mutations = {
-  setPosts: (state, payload) => {
+  [SET_POSTS]: (state, payload) => {
     state.posts = payload.posts;
   }
 };

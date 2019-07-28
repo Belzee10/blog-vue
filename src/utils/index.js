@@ -28,4 +28,29 @@ const truncate = (str, length) => {
   return `${value.slice(0, length)}...`;
 };
 
-export { capitalize, camelCaseComponentName, truncate };
+/**
+ * transform search query
+ * @param {Object} query
+ */
+const transformFilter = ({ searchText, sortingBy }) => {
+  const sortingMap = {
+    popularity_desc: {
+      by: 'popularity',
+      order: 'desc'
+    },
+    popularity_asc: {
+      by: 'popularity',
+      order: 'asc'
+    },
+    date: {
+      by: 'date',
+      order: 'asc'
+    }
+  };
+  return {
+    searchText,
+    sortBy: sortingMap[sortingBy]
+  };
+};
+
+export { capitalize, camelCaseComponentName, truncate, transformFilter };

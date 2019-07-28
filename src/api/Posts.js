@@ -1,9 +1,17 @@
 import api from '@/config/axios';
 
-const getPosts = () =>
+const getAllPosts = () =>
   api
     .get('/posts')
     .then(response => response.data)
     .catch(error => error);
 
-export { getPosts };
+const getFilterPosts = ({ sortBy, searchText }) => {
+  const { by, order } = sortBy;
+  return api
+    .get(`/posts?_sort=${by}&_order=${order}&q=${searchText}`)
+    .then(response => response.data)
+    .catch(error => error);
+};
+
+export { getAllPosts, getFilterPosts };

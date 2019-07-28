@@ -5,6 +5,7 @@
       {{ date }}
     </BaseText>
     <BaseText tag="p" class="content"> {{ content | truncate(250) }} </BaseText>
+    <BaseText class="popularity"> {{ popularity }} - rating </BaseText>
   </BaseBox>
 </template>
 
@@ -31,6 +32,10 @@ export default {
     date: {
       type: String,
       default: ''
+    },
+    popularity: {
+      type: Number,
+      default: null
     }
   }
 };

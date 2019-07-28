@@ -5,7 +5,12 @@
         <PostFilter>
           <template v-slot:inputSearch>
             <BaseText tag="label" for="post-search">Search</BaseText>
-            <BaseInput id="post-search" v-model="searchText" placeholder="Search for a blog" />
+            <BaseInput
+              id="post-search"
+              v-model="searchText"
+              placeholder="Search for a blog"
+              @input:change="updateInput($event)"
+            />
           </template>
           <template v-slot:sorting>
             <BaseText tag="label" for="post-sorting">Sorting</BaseText>
@@ -27,6 +32,7 @@
           :title="post.title"
           :content="post.content"
           :date="post.date"
+          :popularity="post.popularity"
         />
       </BaseCol>
     </BaseRow>
@@ -52,11 +58,15 @@ export default {
       sortingOptions: [
         {
           label: 'By Date',
-          value: 'by_date'
+          value: 'date'
         },
         {
-          label: 'By Popularity',
-          value: 'by_popularity'
+          label: 'Hight to low popularity',
+          value: 'popularity_desc'
+        },
+        {
+          label: 'Low to hight popularity',
+          value: 'popularity_asc'
         }
       ]
     };
@@ -70,8 +80,19 @@ export default {
   methods: {
     updateSorting(value) {
       this.sortingBy = value;
+      this.filterPosts({
+        searchText: this.searchText,
+        sortingBy: this.sortingBy
+      });
     },
-    ...mapActions(['fetchPosts'])
+    updateInput(value) {
+      this.searchText = value;
+      this.filterPosts({
+        searchText: this.searchText,
+        sortingBy: this.sortingBy
+      });
+    },
+    ...mapActions(['fetchPosts', 'filterPosts'])
   }
 };
 </script>

@@ -9,7 +9,8 @@ module.exports = () => {
       id: faker.random.uuid(),
       title: faker.lorem.sentence(),
       content: faker.lorem.paragraph(),
-      date: dayjs(faker.date.past()).format('MMMM DD, YYYY')
+      date: dayjs(faker.date.past()).format('MMMM DD, YYYY'),
+      popularity: i % 2 === 0 ? 5 : 3
     };
     data.posts.push(post);
   }
