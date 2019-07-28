@@ -49,7 +49,12 @@ const transformFilter = ({ searchText, sortingBy }) => {
   };
   return {
     searchText,
-    sortBy: sortingMap[sortingBy]
+    sortBy: sortingBy
+      ? sortingMap[sortingBy]
+      : {
+          by: '',
+          order: ''
+        }
   };
 };
 

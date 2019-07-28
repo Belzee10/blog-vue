@@ -1,0 +1,40 @@
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  border-radius: 0.25rem;
+  background-color: $color-light-grey;
+
+  &.badge-primary {
+    background-color: $color-primary;
+    color: $color-initial;
+  }
+
+  &.badge-secondary {
+    background-color: $color-secondary;
+    color: $color-initial;
+  }
+
+  &.badge-success {
+    background-color: $color-success;
+    color: $color-initial;
+  }
+
+  &.badge-danger {
+    background-color: $color-danger;
+    color: $color-initial;
+  }
+
+  &.badge-light {
+    background-color: $color-light;
+    color: $color-black;
+  }
+
+  &.badge-dark {
+    background-color: $color-dark;
+    color: $color-initial;
+  }
+}

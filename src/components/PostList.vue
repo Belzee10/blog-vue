@@ -74,19 +74,27 @@ export default {
   computed: {
     ...mapGetters(['posts'])
   },
+  watch: {
+    searchText: () => {
+      console.log('searchText fired');
+    },
+    sortingBy: () => {
+      console.log('sortingBy fired');
+    }
+  },
   created() {
     this.fetchPosts();
   },
   methods: {
     updateSorting(value) {
       this.sortingBy = value;
-      this.filterPosts({
-        searchText: this.searchText,
-        sortingBy: this.sortingBy
-      });
+      this.doFilter();
     },
     updateInput(value) {
       this.searchText = value;
+      this.doFilter();
+    },
+    doFilter() {
       this.filterPosts({
         searchText: this.searchText,
         sortingBy: this.sortingBy
