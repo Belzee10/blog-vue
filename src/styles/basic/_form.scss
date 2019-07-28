@@ -15,7 +15,7 @@ input:not([type]),
 textarea,
 select {
   appearance: none;
-  background-color: $color-initial;
+  background-color: $color-initial !important;
   border: 0.1rem solid $color-light-grey;
   border-radius: 0.4rem;
   box-shadow: none;
