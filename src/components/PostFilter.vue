@@ -2,9 +2,11 @@
   <BaseBox class="post-filter">
     <BaseRow>
       <BaseCol width="33">
-        <BaseInput placeholder="search for a blog" />
+        <slot name="inputSearch"></slot>
       </BaseCol>
-      <BaseCol width="33">sorting</BaseCol>
+      <BaseCol width="33">
+        <slot name="sorting"></slot>
+      </BaseCol>
     </BaseRow>
   </BaseBox>
 </template>

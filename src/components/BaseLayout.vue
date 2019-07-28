@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <BaseBox class="layout">
     <header>
       <slot name="header"></slot>
     </header>
@@ -9,7 +9,7 @@
     <footer>
       <slot name="footer"></slot>
     </footer>
-  </div>
+  </BaseBox>
 </template>
 
 <script>

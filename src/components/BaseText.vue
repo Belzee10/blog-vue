@@ -9,7 +9,7 @@ export default {
         return ['span', 'p', 'label'].indexOf(value) !== -1;
       }
     },
-    htmlFor: {
+    for: {
       type: String,
       default: null
     },
@@ -19,7 +19,16 @@ export default {
     }
   },
   render(createElement) {
-    return createElement(this.tag, this.$slots.default);
+    return createElement(
+      this.tag,
+      {
+        attrs: {
+          id: this.id,
+          htmlFor: this.for
+        }
+      },
+      this.$slots.default
+    );
   }
 };
 </script>
