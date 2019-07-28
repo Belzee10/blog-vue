@@ -1,10 +1,17 @@
 <template>
-  <BaseRow>
-    <BaseCol>
-      <BaseHeader type="h3"> List of Posts</BaseHeader>
-      <PostsList />
-    </BaseCol>
-  </BaseRow>
+  <v-fragment>
+    <BaseRow>
+      <BaseCol>
+        dsfsdf
+      </BaseCol>
+    </BaseRow>
+    <BaseRow>
+      <BaseCol>
+        <BaseHeader type="h3"> List of Posts</BaseHeader>
+        <PostsList />
+      </BaseCol>
+    </BaseRow>
+  </v-fragment>
 </template>
 
 <script>
