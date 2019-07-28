@@ -7,6 +7,9 @@
       <BaseCol width="33">
         <slot name="sorting"></slot>
       </BaseCol>
+      <BaseCol width="33">
+        <slot name="info"></slot>
+      </BaseCol>
     </BaseRow>
   </BaseBox>
 </template>

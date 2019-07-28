@@ -3,10 +3,10 @@ button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-  background-color: $color-primary;
-  border: 0.1rem solid $color-primary;
+  background-color: $color-light-grey;
+  border: 0.1rem solid $color-light-grey;
   border-radius: 0.4rem;
-  color: $color-initial;
+  color: $color-black;
   cursor: pointer;
   display: inline-block;
   font-size: 1.1rem;
@@ -17,61 +17,172 @@ input[type='submit'] {
   padding: 0 3rem;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   white-space: nowrap;
 
   &:focus,
   &:hover {
-    background-color: $color-secondary;
-    border-color: $color-secondary;
-    color: $color-initial;
+    background-color: $color-light-grey-hover;
+    border-color: $color-light-grey-hover;
     outline: 0;
   }
 
   &[disabled] {
     cursor: default;
     opacity: 0.5;
+    &:focus,
+    &:hover {
+      background-color: $color-light-grey;
+      border-color: $color-light-grey;
+    }
   }
 
-  &:focus,
-  &:hover {
+  &.btn-primary {
     background-color: $color-primary;
+    color: $color-initial;
     border-color: $color-primary;
+    &:focus,
+    &:hover {
+      background-color: $color-primary-hover;
+      border-color: $color-primary-hover;
+    }
+
+    &[disabled] {
+      &:focus,
+      &:hover {
+        background-color: $color-primary-hover;
+        border-color: $color-primary-hover;
+      }
+    }
   }
 
-  &.button-outline {
-    background-color: transparent;
-    color: $color-primary;
-  }
-
-  &:focus,
-  &:hover {
-    background-color: transparent;
+  &.btn-secondary {
+    background-color: $color-secondary;
+    color: $color-initial;
     border-color: $color-secondary;
-    color: $color-secondary;
+    &:focus,
+    &:hover {
+      background-color: $color-secondary-hover;
+      border-color: $color-secondary-hover;
+    }
+
+    &[disabled] {
+      &:focus,
+      &:hover {
+        background-color: $color-secondary-hover;
+        border-color: $color-secondary-hover;
+      }
+    }
   }
 
-  &[disabled] &:focus,
-  &:hover {
-    border-color: inherit;
-    color: $color-primary;
+  &.btn-success {
+    background-color: $color-success;
+    color: $color-initial;
+    border-color: $color-success;
+    &:focus,
+    &:hover {
+      background-color: $color-success-hover;
+      border-color: $color-success-hover;
+    }
+
+    &[disabled] {
+      &:focus,
+      &:hover {
+        background-color: $color-success-hover;
+        border-color: $color-success-hover;
+      }
+    }
   }
 
-  &.button-clear {
-    background-color: transparent;
-    border-color: transparent;
-    color: $color-primary;
+  &.btn-danger {
+    background-color: $color-danger;
+    color: $color-initial;
+    border-color: $color-danger;
+    &:focus,
+    &:hover {
+      background-color: $color-danger-hover;
+      border-color: $color-danger-hover;
+    }
+
+    &[disabled] {
+      &:focus,
+      &:hover {
+        background-color: $color-danger-hover;
+        border-color: $color-danger-hover;
+      }
+    }
   }
 
-  &:focus,
-  &:hover {
-    background-color: transparent;
-    border-color: transparent;
-    color: $color-secondary;
+  &.btn-light {
+    background-color: $color-light;
+    color: $color-black;
+    border-color: $color-light;
+    &:focus,
+    &:hover {
+      background-color: $color-light-hover;
+      border-color: $color-light-hover;
+    }
+
+    &[disabled] {
+      &:focus,
+      &:hover {
+        background-color: $color-light-hover;
+        border-color: $color-light-hover;
+      }
+    }
   }
 
-  &[disabled] &:focus,
-  &:hover {
-    color: $color-primary;
+  &.btn-dark {
+    background-color: $color-dark;
+    color: $color-initial;
+    border-color: $color-dark;
+    &:focus,
+    &:hover {
+      background-color: $color-dark-hover;
+      border-color: $color-dark-hover;
+    }
+
+    &[disabled] {
+      &:focus,
+      &:hover {
+        background-color: $color-dark-hover;
+        border-color: $color-dark-hover;
+      }
+    }
   }
+
+  // &.btn-outline {
+  //   background-color: transparent;
+  //   color: $color-primary;
+  // }
+
+  // &:focus,
+  // &:hover {
+  //   background-color: transparent;
+  //   border-color: $color-secondary;
+  //   color: $color-secondary;
+  // }
+
+  // &[disabled] &:focus,
+  // &:hover {
+  //   border-color: inherit;
+  //   color: $color-primary;
+  // }
+
+  // &.btn-clear {
+  //   background-color: transparent;
+  //   border-color: transparent;
+  //   color: $color-primary;
+  // }
+
+  // &:focus,
+  // &:hover {
+  //   background-color: transparent;
+  //   border-color: transparent;
+  //   color: $color-secondary;
+  // }
+
+  // &[disabled] &:focus,
+  // &:hover {
+  //   color: $color-primary;
+  // }
 }

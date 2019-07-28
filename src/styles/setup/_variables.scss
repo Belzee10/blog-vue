@@ -1,9 +1,21 @@
+// initial colors
 $color-initial: #fff !default;
+$color-light-grey: #ccc;
+$color-black: #000;
+
+// basic colors
 $color-primary: #97bd28 !default;
 $color-secondary: #1a1b41 !default;
 $color-success: #a4d11d !default;
 $color-danger: #dc3545 !default;
 $color-light: #ededed !default;
 $color-dark: #01051c !default;
-$color-light-grey: #ccc;
-$color-black: #000;
+
+// hover colors
+$color-primary-hover: #85a523 !default;
+$color-secondary-hover: #11122c !default;
+$color-success-hover: #8bb119 !default;
+$color-danger-hover: #a52834 !default;
+$color-light-hover: #cecece !default;
+$color-dark-hover: #00030f !default;
+$color-light-grey-hover: #b6b4b4 !default;

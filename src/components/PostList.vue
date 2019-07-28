@@ -21,6 +21,12 @@
               @select:change="updateSorting($event)"
             />
           </template>
+          <template v-slot:info>
+            <BaseBadge type="primary"> Showing {{ posts.length }} posts </BaseBadge>
+            <BaseButton color="dark">
+              Clear Filters
+            </BaseButton>
+          </template>
         </PostFilter>
       </BaseCol>
     </BaseRow>
