@@ -1,26 +1,28 @@
 <template>
-  <v-fragment>
+  <BaseBox>
     <BaseRow>
       <BaseCol>
-        dsfsdf
+        <PostFilter />
       </BaseCol>
     </BaseRow>
     <BaseRow>
       <BaseCol>
         <BaseHeader type="h3"> List of Posts</BaseHeader>
-        <PostsList />
+        <PostList />
       </BaseCol>
     </BaseRow>
-  </v-fragment>
+  </BaseBox>
 </template>
 
 <script>
-import PostsList from '../components/PostsList.vue';
+import PostList from '@/components/PostList.vue';
+import PostFilter from '@/components/PostFilter.vue';
 
 export default {
   name: 'Home',
   components: {
-    PostsList
+    PostList,
+    PostFilter
   }
 };
 </script>

@@ -12,7 +12,7 @@ import { mapGetters, mapActions } from 'vuex';
 import PostItem from '@/components/PostItem.vue';
 
 export default {
-  name: 'PostsList',
+  name: 'PostList',
   components: {
     PostItem
   },
