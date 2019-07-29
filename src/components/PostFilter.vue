@@ -1,13 +1,13 @@
 <template>
   <BaseBox class="post-filter">
     <BaseRow>
-      <BaseCol width="33">
+      <BaseCol width="33" class="input-search">
         <slot name="inputSearch"></slot>
       </BaseCol>
-      <BaseCol width="33">
+      <BaseCol width="33" class="sorting">
         <slot name="sorting"></slot>
       </BaseCol>
-      <BaseCol width="33">
+      <BaseCol width="33" class="info">
         <slot name="info"></slot>
       </BaseCol>
     </BaseRow>

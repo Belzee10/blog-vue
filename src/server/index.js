@@ -4,7 +4,7 @@ const dayjs = require('dayjs');
 module.exports = () => {
   const data = { posts: [] };
 
-  for (let i = 0; i < 10; i += 1) {
+  for (let i = 0; i < 50; i += 1) {
     const post = {
       id: faker.random.uuid(),
       title: faker.lorem.sentence(),

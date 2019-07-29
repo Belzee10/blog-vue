@@ -11,8 +11,8 @@ const getters = {
 };
 
 const actions = {
-  fetchPosts({ commit }) {
-    return getAllPosts()
+  fetchPosts({ commit }, query) {
+    return getAllPosts(query)
       .then(posts => {
         commit({
           type: SET_POSTS,

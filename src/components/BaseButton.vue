@@ -1,5 +1,5 @@
 <template>
-  <button :class="[isOutline ? 'btn-outline' : 'btn', getBtnColor]">
+  <button :class="[isOutline ? 'btn-outline' : 'btn', getBtnColor]" @click="onClick">
     <slot></slot>
   </button>
 </template>
@@ -28,6 +28,11 @@ export default {
       return {
         [`${buttonTypeClass}-${this.color}`]: this.color
       };
+    }
+  },
+  methods: {
+    onClick() {
+      this.$emit('button:click');
     }
   }
 };

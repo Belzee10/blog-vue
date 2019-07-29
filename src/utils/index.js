@@ -32,7 +32,7 @@ const truncate = (str, length) => {
  * transform search query
  * @param {Object} query
  */
-const transformFilter = ({ searchText, sortingBy }) => {
+const transformFilter = ({ sortingBy, ...rest }) => {
   const sortingMap = {
     popularity_desc: {
       by: 'popularity',
@@ -48,7 +48,7 @@ const transformFilter = ({ searchText, sortingBy }) => {
     }
   };
   return {
-    searchText,
+    ...rest,
     sortBy: sortingBy
       ? sortingMap[sortingBy]
       : {

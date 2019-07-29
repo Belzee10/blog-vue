@@ -23,7 +23,7 @@
           </template>
           <template v-slot:info>
             <BaseBadge type="primary"> Showing {{ posts.length }} posts </BaseBadge>
-            <BaseButton color="dark">
+            <BaseButton color="dark" :disabled="disableClearFilters" @button:click="clearFilters">
               Clear Filters
             </BaseButton>
           </template>
@@ -57,10 +57,25 @@ export default {
     PostItem,
     PostFilter
   },
+  props: {
+    hasInfinityScroll: {
+      type: Boolean,
+      default: true
+    },
+    scrollLimit: {
+      type: Number,
+      default: 10
+    },
+    paginationStep: {
+      type: Number,
+      default: 1
+    }
+  },
   data() {
     return {
       searchText: '',
       sortingBy: '',
+      paginationIndex: 0,
       sortingOptions: [
         {
           label: 'By Date',
@@ -78,20 +93,34 @@ export default {
     };
   },
   computed: {
+    disableClearFilters() {
+      return !this.searchText && !this.sortingBy;
+    },
     ...mapGetters(['posts'])
   },
-  watch: {
-    searchText: () => {
-      console.log('searchText fired');
-    },
-    sortingBy: () => {
-      console.log('sortingBy fired');
-    }
+  mounted() {
+    this.scroll();
   },
   created() {
-    this.fetchPosts();
+    this.fetchPosts({
+      paginate: {
+        limit: this.scrollLimit,
+        page: this.paginationIndex
+      }
+    });
   },
   methods: {
+    scroll() {
+      window.onscroll = () => {
+        const bottomOfWindow =
+          document.documentElement.scrollTop + window.innerHeight ===
+          document.documentElement.offsetHeight;
+        if (bottomOfWindow) {
+          this.paginationIndex = this.paginationIndex + this.paginationStep;
+          this.doFilter();
+        }
+      };
+    },
     updateSorting(value) {
       this.sortingBy = value;
       this.doFilter();
@@ -103,8 +132,17 @@ export default {
     doFilter() {
       this.filterPosts({
         searchText: this.searchText,
-        sortingBy: this.sortingBy
+        sortingBy: this.sortingBy,
+        paginate: {
+          limit: this.scrollLimit,
+          page: this.paginationIndex
+        }
       });
+    },
+    clearFilters() {
+      this.searchText = '';
+      this.sortingBy = '';
+      this.doFilter();
     },
     ...mapActions(['fetchPosts', 'filterPosts'])
   }
